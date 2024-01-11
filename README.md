@@ -1,66 +1,47 @@
-## Foundry
+# Foundry DeFi Stablecoin
+Project on StableCoin from Cyfrin Foundry Course by Patrick Collins
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-Foundry consists of:
+# About
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+This project is meant to be a stablecoin where users can deposit WETH and WBTC in exchange for a token that will be pegged to USD. 
 
-## Documentation
+# Get started
 
-https://book.getfoundry.sh/
+Clone the repository   
+Change to cloned directory   
+Remember to set OWNER and PRIVATE_KEY in '.env'   
 
-## Usage
 
-### Build
+# Contracts
+1) DecentralizedStableCoin : Our Stablecoin is called DecentralizedStableCoin (DSC). We are using ERC20 for the stablecoin with `mint` and `burn` facility.   
+2) DSCEngine : The main contract of our project which handles all the working and management of the system. It contains the logic for most of the processes of the system like liquidating, checking for health factor of a user, etc.
 
-```shell
-$ forge build
-```
+# Scripts
+1) DeployDSC : The main script which deploys the contracts.
+2) HelperConfig : Provides network configuration
 
-### Test
+# Tests
+1) mocks : Mockv3Aggregator to mock priceFeeds
+2) unit : unit tests
+3) fuzz : fuzz testing
 
-```shell
-$ forge test
-```
+# Features 
+Creating a stablecoin using ERC20     
+Using Chainlink Aggregators for Price feeds   
+Using custom errors and events   
+Using weth and wbtc as collateral   
+Checking health Factor of a user   
+Preventing undercollateralization   
+Liquidation   
+Burning and Minting DSC   
+Redeeming Collateral   
+View functions   
 
-### Format
+A lot of testing in form of unit tests and fuzz tests   
+Deploy Scripts   
+Etc   
 
-```shell
-$ forge fmt
-```
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+# By
+Shiv 
